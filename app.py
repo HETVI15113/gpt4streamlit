@@ -1,9 +1,9 @@
 import streamlit as st
 from openai import OpenAI
+import os
 
-
-client = OpenAI(api_key="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")
-
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+HF_API_KEY = os.getenv("HF_API_KEY")
 
 st.title("Text Helper with GPT")
 
@@ -42,4 +42,5 @@ if st.button("Ask"):
 
             print(image)
             st.image(image.url)
+
             
